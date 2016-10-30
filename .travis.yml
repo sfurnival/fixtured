@@ -1,6 +1,12 @@
 language: node_js
 node_js:
-  - "6.9.1"
+  - "4"
+  - "4.4"
+  - "6"
+  - "6.9"
+  - "node"
 before_script:
   - npm install -g gulp
-script: gulp test
+script: 
+  - gulp test
+  - gulp eslint
