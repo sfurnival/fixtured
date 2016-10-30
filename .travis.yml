@@ -10,3 +10,4 @@ before_script:
 script: 
   - gulp test
   - gulp eslint
+after_success: npm run coveralls

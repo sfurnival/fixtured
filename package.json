@@ -4,7 +4,8 @@
   "description": "A utility for creating great test data.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -88,6 +89,7 @@
     }
   },
   "devDependencies": {
+    "coveralls": "^2.11.14",
     "eslint": "^3.9.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
