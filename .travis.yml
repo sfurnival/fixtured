@@ -8,6 +8,6 @@ node_js:
 before_script:
   - npm install -g gulp
 script: 
-  - gulp test
+  - gulp test:coverage
   - gulp eslint
 after_success: npm run coveralls

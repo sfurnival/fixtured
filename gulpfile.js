@@ -58,7 +58,6 @@ Gulp.task('test:full', function() {
 Gulp.task('test:coverage', ['pre-test'], function() {
     return Gulp.src('./tests/**/*.js', { read: false })
         .pipe(Mocha())
-        // Creating the reports after tests ran
         .pipe(Istanbul.writeReports({
             dir: './coverage',
             reporters: [
@@ -66,8 +65,7 @@ Gulp.task('test:coverage', ['pre-test'], function() {
             ],
             reportOpts: { dir: './coverage' }
         }))
-        // Enforce a coverage of at least 90%
-        .pipe(Istanbul.enforceThresholds({ thresholds: { global: 90 } }));
+        .pipe(Istanbul.enforceThresholds({ thresholds: { global: 100 } }));
 });
 
 if (Args.file && Args.test) {
@@ -81,7 +79,6 @@ if (Args.file && Args.test) {
     Gulp.task('test:coverage:file', ['pre-test-file'], function() {
         return Gulp.src('./tests/' + Args.test, { read: false })
             .pipe(Mocha())
-            // Creating the reports after tests ran
             .pipe(Istanbul.writeReports({
                 dir: './coverage',
                 reporters: [
@@ -89,8 +86,7 @@ if (Args.file && Args.test) {
                 ],
                 reportOpts: { dir: './coverage' }
             }))
-            // Enforce a coverage of at least 90%
-            .pipe(Istanbul.enforceThresholds({ thresholds: { global: 98 } }));
+            .pipe(Istanbul.enforceThresholds({ thresholds: { global: 100 } }));
     });
 }
 
