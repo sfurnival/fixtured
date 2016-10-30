@@ -108,6 +108,7 @@ let positions = [
     'Goaltender', 'Center', 'Left Wing', 'Right Wing',
     'Left Defence', 'Right Defence'
 ];
+
 let players = Users.map(positions);
 >> {
 >>     "Goaltender": { ... },
