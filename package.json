@@ -1,6 +1,6 @@
 {
   "name": "fixated",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A utility for creating great test data.",
   "main": "index.js",
   "scripts": {
