@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sfurnival/fixated.git"
+    "url": "git+https://github.com/sfurnival/fixtured.git"
   },
   "author": "Stephen Furnival <sfurnival@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/sfurnival/fixated/issues"
+    "url": "https://github.com/sfurnival/fixtured/issues"
   },
-  "homepage": "https://github.com/sfurnival/fixated#readme",
+  "homepage": "https://github.com/sfurnival/fixtured#readme",
   "eslintConfig": {
     "ecmaFeatures": {
       "ecmaVersion": 6,
