@@ -1,21 +1,21 @@
 # Fixtured
 
-[![Build Status](https://travis-ci.org/sfurnival/fixtured.svg?branch=master)](https://travis-ci.org/sfurnival/fixtured)
-[![Coverage Status](https://coveralls.io/repos/sfurnival/fixtured/badge.svg?branch=master)](https://coveralls.io/r/sfurnival/fixtured?branch=master)
+[![Build Status](https://travis-ci.org/sfurnival/fixtured.svg?branch=release/1.0)](https://travis-ci.org/sfurnival/fixtured)
+[![Coverage Status](https://coveralls.io/repos/sfurnival/fixtured/badge.svg?branch=release/1.0)](https://coveralls.io/r/sfurnival/fixtured?branch=release/1.0)
 [![npm version](https://badge.fury.io/js/fixtured.svg)](https://badge.fury.io/js/fixtured)
 
 A library for easily creating and managing dynamic test data.
 
 ### Installation
 
-  - Latest release:
-    ```bash
-    $ npm install fixtured
-    ```
-  - Master branch:
-    ```bash
-    $ npm install http://github.com/sfurnival/fixated/master
-    ```
+**Latest release:**
+```bash
+$ npm install fixtured
+```
+**Master branch:**
+```bash
+$ npm install http://github.com/sfurnival/fixated/master
+```
 
 ### Usage
 **Creating Values**
@@ -65,7 +65,13 @@ let Users = Fixtured.Fixture.Define('User', {
     lname: Fixtured.Types.String(2, 15),
     age: Fixtured.Types.Integer(1, 100),
     latitude: Fixtured.Types.Float(-90, 90),
-    longitude: Fixtured.Types.Float(-180, 180)
+    longitude: Fixtured.Types.Float(-180, 180),
+    
+    // Define static values for things you want every stamped
+    // copy to have.
+    category: 'sports',
+    rating: 4.20,
+    
 });
 
 /**
@@ -80,17 +86,21 @@ let user_1 = Users.stamp();
 >>     lname: 'a10c',
 >>     age: 35,
 >>     latitude: 54.235359826125205,
->>     longitude: 12.592912316322327
+>>     longitude: 12.592912316322327,
+>>     category: 'sports',
+>>     rating: 4.20
 >> }
 
 let user_2 = Users.stamp();
 >> {
 >>     id: 192,
->>     fname: 'bfc0',
->>     lname: '7ffc',
+>>     fname: 'bfc0123',
+>>     lname: '7ffc0eea',
 >>     age: 12,
 >>     latitude: -27.685429360717535,
->>     longitude: -146.5287543553859
+>>     longitude: -146.5287543553859,
+>>     category: 'sports',
+>>     rating: 4.20
 >> }
 
 /**

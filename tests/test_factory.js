@@ -44,7 +44,10 @@ describe('FixtureFactory Tests:', function() {
                         brother : Fixate.Types.String(50, 60),
                         sister  : Fixate.Types.String(70, 80)
                     }
-                }
+                },
+                meta_a : 'A static string',
+                type   : 23,
+                rating : 4.20
             });
             
             let instance = Fixtures.Test1.stamp();
@@ -72,7 +75,16 @@ describe('FixtureFactory Tests:', function() {
             instance.family.name.should.be.type('string');
             instance.family.siblings.sister.length.should.be.aboveOrEqual(70);
             instance.family.siblings.sister.length.should.be.belowOrEqual(80);
-            
+
+            instance.meta_a.should.be.type('string');
+            instance.meta_a.should.equal('A static string');
+
+            instance.type.should.be.type('number');
+            instance.type.should.equal(23);
+
+            instance.rating.should.be.type('number');
+            instance.rating.should.equal(4.20);
+
             done();
         });
         
