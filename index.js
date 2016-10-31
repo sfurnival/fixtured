@@ -4,7 +4,7 @@
 // Dependencies
 // --
 
-let Config = require('./config.json');
+// ~
 
 // --
 // Module
