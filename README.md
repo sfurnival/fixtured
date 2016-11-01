@@ -14,7 +14,7 @@ $ npm install fixtured
 ```
 **Master branch:**
 ```bash
-$ npm install http://github.com/sfurnival/fixated/master
+$ npm install http://github.com/sfurnival/fixtured/master
 ```
 
 ### Usage
