@@ -167,6 +167,23 @@ describe('FixtureFactory Tests:', function() {
     })();
 
     // --
+    // .set() Tests
+    // --
+
+    (() => {
+
+        it('> .set() should properly store a fixture.', function(done) {
+            let foo = Fixtures.Test4.stamp();
+            Fixtures.Test4.set('foo', foo);
+
+            (Fixtures.Test4.get('foo') === foo).should.be.true();
+
+            done();
+        });
+
+    })();
+
+    // --
     // .any() Tests
     // --
 
