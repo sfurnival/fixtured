@@ -1,6 +1,6 @@
 {
   "name": "fixtured",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A library for easily creating and managing dynamic test data.",
   "main": "index.js",
   "scripts": {
