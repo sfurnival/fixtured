@@ -71,7 +71,11 @@ let Users = Fixtured.Fixture.Define('User', {
     // copy to have.
     category: 'sports',
     rating: 4.20,
-    
+  
+    // We can also supply a function:
+    email: () => { 
+        return `${ Fixtured.Generate.String(10, 10, 'user.email') }@test.com`;
+    };
 });
 
 /**
