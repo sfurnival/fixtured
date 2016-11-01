@@ -75,7 +75,7 @@ let Users = Fixtured.Fixture.Define('User', {
     // We can also supply a function:
     email: () => { 
         return `${ Fixtured.Generate.String(10, 10, 'user.email') }@test.com`;
-    };
+    }
 });
 
 /**
@@ -92,7 +92,8 @@ let user_1 = Users.stamp();
 >>     latitude: 54.235359826125205,
 >>     longitude: 12.592912316322327,
 >>     category: 'sports',
->>     rating: 4.20
+>>     rating: 4.20,
+>>     email: 'fc5912ddfa@test.com'
 >> }
 
 let user_2 = Users.stamp();
@@ -104,7 +105,8 @@ let user_2 = Users.stamp();
 >>     latitude: -27.685429360717535,
 >>     longitude: -146.5287543553859,
 >>     category: 'sports',
->>     rating: 4.20
+>>     rating: 4.20,
+>>     email: 'd99efcc34a@test.com'
 >> }
 
 /**
