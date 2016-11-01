@@ -117,7 +117,7 @@ let team = Users.multi(10); // Array of 10 users
 
 /**
  * Now we'll create some more, but we'll key each one so
- * that we can access is later.
+ * that we can access it later.
  */
 
 let positions = [
