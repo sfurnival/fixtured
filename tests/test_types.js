@@ -38,7 +38,7 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String('user.name');
             
             def.type.should.equal('string');
-            def.unique.should.equal('user.name');
+            def.args[2].should.equal('user.name');
             
             done();
         });
@@ -47,9 +47,9 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String(15, 'user.name');
             
             def.type.should.equal('string');
-            def.min.should.equal(15);
-            def.max.should.equal(15);
-            def.unique.should.equal('user.name');
+            def.args[0].should.equal(15);
+            def.args[1].should.equal(15);
+            def.args[2].should.equal('user.name');
             
             done();
         });
@@ -58,8 +58,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String();
             
             def.type.should.equal('string');
-            def.min.should.equal(Fixate.Types.Defaults.String.Min);
-            def.max.should.equal(Fixate.Types.Defaults.String.Min);
+            def.args[0].should.equal(Fixate.Types.Defaults.String.Min);
+            def.args[1].should.equal(Fixate.Types.Defaults.String.Min);
             
             done();
         });
@@ -68,8 +68,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String(128);
             
             def.type.should.equal('string');
-            def.min.should.equal(128);
-            def.max.should.equal(128);
+            def.args[0].should.equal(128);
+            def.args[1].should.equal(128);
             
             done();
         });
@@ -78,8 +78,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String(64, 128);
             
             def.type.should.equal('string');
-            def.min.should.equal(64);
-            def.max.should.equal(128);
+            def.args[0].should.equal(64);
+            def.args[1].should.equal(128);
             
             done();
         });
@@ -90,8 +90,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.String();
             
             def.type.should.equal('string');
-            def.min.should.equal(777);
-            def.max.should.equal(777);
+            def.args[0].should.equal(777);
+            def.args[1].should.equal(777);
             
             done();
         });
@@ -115,7 +115,7 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer('user.id');
             
             def.type.should.equal('int');
-            def.unique.should.equal('user.id');
+            def.args[2].should.equal('user.id');
             
             done();
         });
@@ -124,9 +124,9 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer(15, 'user.id');
             
             def.type.should.equal('int');
-            def.min.should.equal(15);
-            def.max.should.equal(Fixate.Types.Defaults.Integer.Max);
-            def.unique.should.equal('user.id');
+            def.args[0].should.equal(15);
+            def.args[1].should.equal(Fixate.Types.Defaults.Integer.Max);
+            def.args[2].should.equal('user.id');
             
             done();
         });
@@ -135,8 +135,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer();
             
             def.type.should.equal('int');
-            def.min.should.equal(Fixate.Types.Defaults.Integer.Min);
-            def.max.should.equal(Fixate.Types.Defaults.Integer.Max);
+            def.args[0].should.equal(Fixate.Types.Defaults.Integer.Min);
+            def.args[1].should.equal(Fixate.Types.Defaults.Integer.Max);
             
             done();
         });
@@ -145,8 +145,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer(128);
             
             def.type.should.equal('int');
-            def.min.should.equal(128);
-            def.max.should.equal(Fixate.Types.Defaults.Integer.Max);
+            def.args[0].should.equal(128);
+            def.args[1].should.equal(Fixate.Types.Defaults.Integer.Max);
             
             done();
         });
@@ -155,8 +155,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer(64, 128);
             
             def.type.should.equal('int');
-            def.min.should.equal(64);
-            def.max.should.equal(128);
+            def.args[0].should.equal(64);
+            def.args[1].should.equal(128);
             
             done();
         });
@@ -168,8 +168,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Integer();
             
             def.type.should.equal('int');
-            def.min.should.equal(333);
-            def.max.should.equal(999);
+            def.args[0].should.equal(333);
+            def.args[1].should.equal(999);
             
             done();
         });
@@ -193,7 +193,7 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float('user.height');
             
             def.type.should.equal('float');
-            def.unique.should.equal('user.height');
+            def.args[2].should.equal('user.height');
             
             done();
         });
@@ -202,9 +202,9 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float(15, 'user.height');
             
             def.type.should.equal('float');
-            def.min.should.equal(15);
-            def.max.should.equal(Fixate.Types.Defaults.Float.Max);
-            def.unique.should.equal('user.height');
+            def.args[0].should.equal(15);
+            def.args[1].should.equal(Fixate.Types.Defaults.Float.Max);
+            def.args[2].should.equal('user.height');
             
             done();
         });
@@ -213,8 +213,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float();
             
             def.type.should.equal('float');
-            def.min.should.equal(Fixate.Types.Defaults.Float.Min);
-            def.max.should.equal(Fixate.Types.Defaults.Float.Max);
+            def.args[0].should.equal(Fixate.Types.Defaults.Float.Min);
+            def.args[1].should.equal(Fixate.Types.Defaults.Float.Max);
             
             done();
         });
@@ -223,8 +223,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float(128);
             
             def.type.should.equal('float');
-            def.min.should.equal(128);
-            def.max.should.equal(Fixate.Types.Defaults.Float.Max);
+            def.args[0].should.equal(128);
+            def.args[1].should.equal(Fixate.Types.Defaults.Float.Max);
             
             done();
         });
@@ -233,8 +233,8 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float(64, 128);
             
             def.type.should.equal('float');
-            def.min.should.equal(64);
-            def.max.should.equal(128);
+            def.args[0].should.equal(64);
+            def.args[1].should.equal(128);
             
             done();
         });
@@ -246,8 +246,38 @@ describe('Type Tests:', function() {
             let def = Fixate.Types.Float();
             
             def.type.should.equal('float');
-            def.min.should.equal(333);
-            def.max.should.equal(999);
+            def.args[0].should.equal(333);
+            def.args[1].should.equal(999);
+            
+            done();
+        });
+        
+    })();
+    
+    // --
+    // OneOf Tests
+    // --
+    
+    (() => {
+        
+        it('> OneOf: options should be configurable', function(done) {
+            Fixate.Types.OneOf(['a', 'b', 'c']).args.should.containEql(['a', 'b', 'c']);
+            
+            done();
+        });
+        
+    })();
+    
+    // --
+    // Chance Tests
+    // --
+    
+    (() => {
+        
+        it('> Chance: options should be configurable', function(done) {
+            let type = Fixate.Types.Chance('bool', { likelihood: 30 });
+            type.args[0].should.equal('bool');
+            type.args[1].should.containEql({ likelihood: 30 });
             
             done();
         });

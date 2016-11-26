@@ -383,6 +383,76 @@ describe('Generator Tests:', function() {
         });
         
     })();
+    
+    // --
+    // Chance.js Tests
+    // --
+    
+    (() => {
+        
+        it('> .Chance() should run the appropriate Chance.js function (bool)', function(done) {
+            for (let x = 1; x <= 10; x++) {
+                Fixate.Generate.$('bool').should.be.type('boolean');
+            }
+            
+            done();
+        });
+        
+        it('> .Chance() should run the appropriate Chance.js function with configuration (character)', function(done) {
+            for (let x = 1; x <= 10; x++) {
+                Fixate.Generate.$('character', { pool: 't' }).should.equal('t');
+            }
+            for (let x = 1; x <= 10; x++) {
+                Fixate.Generate.$('character', { pool: 'k' }).should.equal('k');
+            }
+            
+            done();
+        });
+        
+        it('> .Chance() should run the appropriate Chance.js function and honor uniqueness (character)', function(done) {
+            let a = Fixate.Generate.$('character', { pool: 'ab' }, 'character');
+            let b = Fixate.Generate.$('character', { pool: 'ab' }, 'character').should.not.equal(a);
+            let c = Fixate.Generate.$('character', { pool: 'abc' }, 'character').should.equal('c');
+            let d = Fixate.Generate.$('character', { pool: 'abcd' }, 'character').should.equal('d');
+            let e = Fixate.Generate.$('character', { pool: 'abcde' }, 'character').should.equal('e');
+            let f = Fixate.Generate.$('character', { pool: 'abcdef' }, 'character').should.equal('f');
+            let g = Fixate.Generate.$('character', { pool: 'abcdefg' }, 'character').should.equal('g');
+            let h = Fixate.Generate.$('character', { pool: 'abcdefgh' }, 'character').should.equal('h');
+            
+            done();
+        });
+        
+        it('> .Chance() should throw an error when the function doesn\'t exist', function(done) {
+            Should.throws(() => {
+                Fixate.Generate.$('not_a_function', { pool: 'k' });
+                done(new Error('Chance() should have thrown an error.'));
+            });
+            done();
+        });
+        
+    })();
+    
+    (() => {
+        
+        it('> .OneOf should return one of the available options', function(done) {
+            for (let x = 1; x <= 50; x++) {
+                ['A', false, true, 0, 1, 2.0, {}].should.containEql(
+                    Fixate.Generate.OneOf(['A', false, true, 0, 1, 2.0, {}])
+                );
+            }
+            
+            done();
+        });
+        
+        it('> .OneOf() should throw an error when not given an array', function(done) {
+            Should.throws(() => {
+                Fixate.Generate.OneOf({ foo: 'bar' });
+                done(new Error('OneOf() should have thrown an error.'));
+            });
+            done();
+        });
+        
+    })();
 
     // --
     // Suite Teardown

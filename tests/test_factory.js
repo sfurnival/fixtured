@@ -38,6 +38,8 @@ describe('FixtureFactory Tests:', function() {
                 name   : Fixtured.Types.String(10, 20),
                 age    : Fixtured.Types.Integer(1, 99),
                 height : Fixtured.Types.Float(4, 7),
+                group  : Fixtured.Types.$('bool'),
+                status : Fixtured.Types.OneOf(['ACTIVE', 'INACTIVE']),
                 family : {
                     name     : Fixtured.Types.String(30, 40),
                     siblings : {

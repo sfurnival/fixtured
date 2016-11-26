@@ -40,7 +40,10 @@ let user = {
         
     // Generate some fake lat/long values.
     latitude: Fixtured.Generate.Float(-90, 90),
-    longitude: Fixtured.Generate.Float(-180, 180)
+    longitude: Fixtured.Generate.Float(-180, 180),
+    
+    // Use a Chance.js function
+    email: Fixtured.Generate.$('email', { domain: 'test.com'});
 };
 ```
   
@@ -71,9 +74,12 @@ let Users = Fixtured.Fixture.Define('User', {
     // copy to have.
     category: 'sports',
     rating: 4.20,
+    
+    // Use a Chance.js function
+    bio: Fixtured.Type.$('paragraph', { sentences: 3 });
   
     // We can also supply a function:
-    email: () => { 
+    email: () => {
         return `${ Fixtured.Generate.String(10, 10, 'user.email') }@test.com`;
     }
 });

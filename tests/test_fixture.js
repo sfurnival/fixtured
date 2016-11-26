@@ -50,34 +50,34 @@ describe('Fixture Tests:', function() {
             Fixtures.Foo.should.be.instanceOf(Fixate.Fixture.FixtureFactory);
             
             Fixtures.Foo.definition.name.type.should.equal('string');
-            Fixtures.Foo.definition.name.min.should.equal(10);
-            Fixtures.Foo.definition.name.max.should.equal(20);
-            Fixtures.Foo.definition.name.unique.should.equal('test.1.name');
+            Fixtures.Foo.definition.name.args[0].should.equal(10);
+            Fixtures.Foo.definition.name.args[1].should.equal(20);
+            Fixtures.Foo.definition.name.args[2].should.equal('test.1.name');
             
             Fixtures.Foo.definition.age.type.should.equal('int');
-            Fixtures.Foo.definition.age.min.should.equal(1);
-            Fixtures.Foo.definition.age.max.should.equal(99);
-            Fixtures.Foo.definition.age.unique.should.equal('test.1.age');
+            Fixtures.Foo.definition.age.args[0].should.equal(1);
+            Fixtures.Foo.definition.age.args[1].should.equal(99);
+            Fixtures.Foo.definition.age.args[2].should.equal('test.1.age');
             
             Fixtures.Foo.definition.height.type.should.equal('float');
-            Fixtures.Foo.definition.height.min.should.equal(4);
-            Fixtures.Foo.definition.height.max.should.equal(7);
-            Fixtures.Foo.definition.height.unique.should.equal('test.1.height');
+            Fixtures.Foo.definition.height.args[0].should.equal(4);
+            Fixtures.Foo.definition.height.args[1].should.equal(7);
+            Fixtures.Foo.definition.height.args[2].should.equal('test.1.height');
             
             Fixtures.Foo.definition.family.name.type.should.equal('string');
-            Fixtures.Foo.definition.family.name.min.should.equal(30);
-            Fixtures.Foo.definition.family.name.max.should.equal(40);
-            Fixtures.Foo.definition.family.name.unique.should.equal('test.1.family.name');
+            Fixtures.Foo.definition.family.name.args[0].should.equal(30);
+            Fixtures.Foo.definition.family.name.args[1].should.equal(40);
+            Fixtures.Foo.definition.family.name.args[2].should.equal('test.1.family.name');
             
             Fixtures.Foo.definition.family.siblings.brother.type.should.equal('string');
-            Fixtures.Foo.definition.family.siblings.brother.min.should.equal(50);
-            Fixtures.Foo.definition.family.siblings.brother.max.should.equal(60);
-            Fixtures.Foo.definition.family.siblings.brother.unique.should.equal('test.1.family.siblings.brother');
+            Fixtures.Foo.definition.family.siblings.brother.args[0].should.equal(50);
+            Fixtures.Foo.definition.family.siblings.brother.args[1].should.equal(60);
+            Fixtures.Foo.definition.family.siblings.brother.args[2].should.equal('test.1.family.siblings.brother');
             
             Fixtures.Foo.definition.family.siblings.sister.type.should.equal('string');
-            Fixtures.Foo.definition.family.siblings.sister.min.should.equal(70);
-            Fixtures.Foo.definition.family.siblings.sister.max.should.equal(80);
-            Fixtures.Foo.definition.family.siblings.sister.unique.should.equal('test.1.family.siblings.sister');
+            Fixtures.Foo.definition.family.siblings.sister.args[0].should.equal(70);
+            Fixtures.Foo.definition.family.siblings.sister.args[1].should.equal(80);
+            Fixtures.Foo.definition.family.siblings.sister.args[2].should.equal('test.1.family.siblings.sister');
             
             done();
         });
